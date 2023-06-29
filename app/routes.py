@@ -241,10 +241,8 @@ def deleteForm():
     input_df = Tabledf(input_df, "inputpoultry", "inputpork", "inputbeef", "inputtotal", "input")
     input_df = input_df.create_table().to_html(index=False, classes='data', header="true")
 
-    """
-    A delete form used to delete entries from the database.
-    The user can select a date and if the date exists in the input table, all entries for that date are deleted in all tables.
-    """
+    #A delete form used to delete entries from the database.
+    #The user can select a date and if the date exists in the input table, all entries for that date are deleted in all tables.
     form = DeleteForm()
     checker = Input.query.filter_by(date=form.date.data).first()
     if form.validate_on_submit():

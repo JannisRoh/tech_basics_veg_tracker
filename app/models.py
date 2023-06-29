@@ -2,7 +2,7 @@ from app import db
 """
 A model is created for each variable measured, the grams of meat and its equivalent in CO2, water and animal lives.
 Each row in the model will represent one form submission consisting of a date, the quantity of the variable per animal and total.
-The values for CO2, water and animals were calculated by multiplying the input with a constant and therefore stored as floats and only converted to integers once the final output value is derived.
+The values for CO2, water and animals were calculated by multiplying the input with a constant and therefore stored as floats to keep the output as accurate as possible.
 """
 class Input(db.Model):
     id = db.Column(db.Integer, primary_key = True)
