@@ -1,0 +1,281 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10vw;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth !important;
+}
+
+.textgroup {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 40vh;
+  color: white;
+}
+.title {
+  font-size: 4.5rem;
+  font-weight: 800;
+}
+.darkgreen {
+  color: #3d5e21;
+}
+.green {
+  color: #81c14b;
+}
+.blue {
+  color: #5bc0eb;
+}
+.purple {
+  color: #7a28cb;
+}
+.darkpink {
+  color: #a31858;
+}
+.pink {
+  color: #fc60a8;
+}
+
+.subtitle {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width:100%;
+  transform-style: preserve-3d;
+  margin-bottom: 5vw;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.section1 {
+  margin-bottom: -30vw;
+}
+.section1 .textgroup {
+  margin-top: 10vh;
+}
+.textgroup .btn {
+  background-color: #7a28cb;
+  margin-right: 2vw;
+  margin-bottom: 3vh;
+  margin-top:3vh;
+  border: 0px;
+}
+.textgroup .btn:active {
+  background-color: #5a1e96;
+}
+
+.section2 {
+  margin-bottom: -50vw;
+}
+
+.section3 {
+  z-index: -2;
+}
+
+.section4 .textgroup{
+  margin-top: 5vh;
+}
+.section4 .textgroup h2 {
+  text-align: right;
+}
+.section4 img {
+  align-self: end;
+}
+
+.background10 {
+  transform: translateZ(-3vw) scale(1.3);
+}
+
+.background5 {
+  transform: translateZ(-3vw) scale(1.3);
+}
+
+.background4 {
+  transform: translateZ(-2vw) scale(1.2);
+}
+
+.background3 {
+  transform: translateZ(-2vw) scale(1.2);
+}
+
+.background2 {
+  transform: translateZ(-1vw) scale(1.1);
+}
+
+.background1 {
+  transform: translateZ(-1vw) scale(1.1);
+}
+
+
+.background{
+  position: absolute;
+  width:100%;
+  min-height: 350vh;
+  max-height: 500vh;
+  z-index: -3;
+  object-fit: cover;
+}
+
+.parallax {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  min-width: 150vh;
+  max-width: 2000px;
+}
+
+
+
+
+body {
+  font-family: "Barlow", sans-serif;
+  background-color: #eeeeee;
+}
+
+
+.container{
+    background-color: #ffffff;
+}
+
+.chart {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 6vh;
+}
+
+.piechart {
+  max-width: 600px !important;
+}
+
+.btn{
+  margin-top: 1vh;
+  font-size: 24px;
+  padding: 20px;
+}
+.btn-success{
+  background-color: #81C14B;
+}
+
+.panel{
+  border-color: #81C14B;
+  font-size: 3rem;
+}
+
+.invisibleanimate {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.visible {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+}
+
+.nav-tabs{
+  font-size: 3rem;
+  padding-left: 15px;
+}
+li.active a {
+  color: #81c14b !important;
+}
+
+.form-horizontal {
+  background-color: unset;
+  border: unset;
+}
+.control-label {
+  font-weight: 100;
+  font-size: 1.6rem;
+}
+
+.input-table {
+  display: flex;
+  justify-content: center;
+  max-height: 60vh;
+  overflow-y: auto;
+  border: 1px solid #81c14b;
+  font-size: 16px;
+  margin-bottom: 3vh;
+}
+
+.remove-padding-left {
+  padding-left: 0;
+}
+
+th, td {
+  padding:10px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 7rem;
+  }
+  .subtitle {
+    font-size: 4.5rem;
+  }
+  .btn{
+    margin-top: 4vh;
+  }
+  .section1 {
+    margin-bottom: 10vw;
+  }
+
+  .section2 {
+    margin-bottom: 5vw;
+  }
+
+  .background {
+  min-height: 450vh;
+  }
+
+  .background10 {
+    transform: translateZ(-10vw) scale(2);
+  }
+
+  .background5 {
+    transform: translateZ(-5vw) scale(1.5);
+  }
+
+  .background4 {
+    transform: translateZ(-4vw) scale(1.4);
+  }
+
+  .background3 {
+    transform: translateZ(-3vw) scale(1.3);
+  }
+
+  .background2 {
+    transform: translateZ(-2vw) scale(1.2);
+  }
+
+  .background1 {
+    transform: translateZ(-1vw) scale(1.1);
+  }
+
+
+
+
+  .text-sm-right {
+      text-align: right !important;
+  }
+  .panel:nth-child(2) {
+    transition-delay: 200ms;
+  }
+  .panel:nth-child(3) {
+    transition-delay: 400ms;
+  }
+  .panel:nth-child(4) {
+    transition-delay: 600ms;
+  }

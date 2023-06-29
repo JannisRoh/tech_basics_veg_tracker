@@ -1,0 +1,69 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+{{super()}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@800&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
+{% block scripts %}
+<script defer src="{{url_for('.static', filename='scripts.js')}}"></script>
+{{super()}}
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+
+      <img src="../static/img/background1.png" class="background">
+
+    <div class="section section1">
+      <img src="../static/img/hillback.png" class="parallax background10">
+      <img src="../static/img/hillfront.png" class="parallax background3">
+      <div class="textgroup">
+        <h1 class="title">You are meat-free for <span class="darkgreen">{{noMeatDays}} days</span>!</h1>
+        <h2 class="subtitle">That is <span class="darkgreen">{{savedKg}}kg</span> of meat you didn't eat.</h2>
+        <a class="btn btn-success btn-lg" href="dashboard">Dashboard</a>
+          <a class="btn btn-success btn-lg" href="form">Add Entry</a>
+      </div>
+    </div>
+
+    <div class="section section2">
+      <img src="../static/img/water1.png" class="parallax background5">
+      <img src="../static/img/water2.png" class="parallax background4">
+      <img src="../static/img/water4.png" class="parallax background1">
+      <div class="textgroup">
+        <h1 class="title">You saved <span class="blue">{{savedWater}}l</span> of water.</h1>
+        <h2 class="subtitle">That is <span class="blue">{{inShowers}}</span> showers</h2>
+        <h2 class="subtitle">or <span class="blue">{{inBathtubs}}</span> bathtubs.</h2>
+      </div>
+    </div>
+    <div class="section section3">
+      <img src="../static/img/cloud3.png" class="parallax background5">
+      <img src="../static/img/cloud2.png" class="parallax background3">
+      <div class="textgroup">
+        <h1 class="title">You saved <span class="purple">{{savedCo2}}kg</span> of CO<sub>2</sub>.</h1>
+        <h2 class="subtitle">That is the equivalent of <span class="purple">{{inCarKm}}km</span> with the car</h2>
+        <h2 class="subtitle">or <span class="purple">{{inPlaneKm}}km</span> with the plane.</h2>
+      </div>
+    </div>
+    <div class="section section4">
+      <img src="../static/img/farmback.png" class="parallax background10">
+      <img src="../static/img/farmfront.png" class="parallax background2">
+      <div class="textgroup">
+        <h1 class="title">If you continue your eating habits for the next <span class="darkpink">10 years</span> you could save:</h1>
+        <h2 class="subtitle darkpink">{{savedNrPork10Year}} Pigs</h2>
+        <h2 class="subtitle darkpink">{{savedNrPoultry10Year}} Chickens</h2>
+        <h2 class="subtitle darkpink">{{savedNrBeef10Year}} Cows</h2>
+      </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
+{% block scripts %}
+<script defer src="{{url_for('.static', filename='scripts.js')}}"></script>
+{{super()}}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-6">
+      <h1 class="title purple">Your Stats</h1>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 text-left text-sm-right">
+      <a class="btn btn-success btn-lg" href="/">Home</a>
+      <a class="btn btn-success btn-lg" href="form">Add Entry</a>
+      <a class="btn btn-default btn-lg" href="delete">Delete Entry</a>
+    </div>
+
+  </div>
+  <div class="row">
+
+    <div class="col-xs-12 col-md-8 text-center">
+        <img class="chart piechart" src= "{{pieChart}}">
+    </div>
+
+
+    <div class="col-xs-12 col-md-4">
+      <h2 class="subtitle purple">You Saved:</h2>
+      <div class="panelcontainer">
+
+        <div class="panel invisibleanimate panel-default">
+          <div class="panel-body"><span class="green">{{savedKg}}kg</span> of meat</div>
+        </div>
+
+        <div class="panel invisibleanimate panel-default">
+          <div class="panel-body"><span class="purple">{{savedCo2}}kg</span> of CO<sub>2</sub></div>
+        </div>
+
+        <div class="panel invisibleanimate panel-default">
+          <div class="panel-body"><span class="blue">{{savedWater}}L</span> of water</div>
+        </div>
+
+        <div class="panel invisibleanimate panel-default">
+          <div class="panel-body"><span class="pink">{{savedAnimals}}</span> animals</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+  <ul class="nav nav-tabs">
+    <li class="active"><a class ="purple" data-toggle="tab" href="#kg">Kilogram</a></li>
+    <li><a class ="purple" data-toggle="tab" href="#water">Water</a></li>
+    <li><a class ="purple" data-toggle="tab" href="#co2">CO<sub>2</sub></a></li>
+  </ul>
+
+<!-- Tab content -->
+<div class="tab-content">
+  <div id="kg" class="tab-pane fade in active">
+    <div class="col-xs-12 text-center">
+      <h2 class="subtitle green">Average amount of kg eaten per day in the last 30 days</h2>
+      <img class="chart" src= "{{kgBarChart}}">
+    </div>
+  </div>
+  <div id="water" class="tab-pane fade">
+    <div class="col-xs-12 text-center">
+      <h2 class="subtitle green">Average amount of water used for meat per day in the last 30 days</h2>
+      <img class="chart" src= "{{waterBarChart}}">
+    </div>
+  </div>
+  <div id="co2" class="tab-pane fade">
+    <div class="col-xs-12 text-center">
+      <h2 class="subtitle green">Average amount of CO<sub>2</sub> used for meat per day in the last 30 days</h2>
+      <img class="chart" src= "{{co2BarChart}}">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock %}
