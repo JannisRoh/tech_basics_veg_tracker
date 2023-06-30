@@ -17,7 +17,7 @@ migrate = Migrate(app,db)
 
 from app import routes, models
 
-@app.before_first_request
+#@app.before_first_request
 def init_db():
     engine = sa.create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
     inspector = sa.inspect(engine)
